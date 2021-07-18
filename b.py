@@ -9,61 +9,40 @@ try:
  ngay = today.strftime("%d")
  thang = today.strftime("%m")
  nam = today.strftime("%Y")
- ngocdz = today.strftime("%d-%m-%Y")
- key = input("\033[1;31mNOLA712[\033[1;33m~\033[1;31m]:#\033[1;32m Nhập Api_Key :\033[1;33m ")
+ trongdz = today.strftime("%d-%m-%Y")
+ key = input("\033[1;31mNOLA712[\033[1;33m~\033[1;31m] :#\033[1;32m Nhập Api_Key : \033[1;36m ")
  get_key = json.loads(requests.get(f"https://sellxugiare.com/api.php?key="+key).text)
  p_key = get_key["pass"]
  time = get_key["time"]
  name = get_key["user"]
- user = get_key["useragent"]
- os.system('clear')
- print("\033[1;31m ███╗  ██╗ █████╗ ██╗      █████╗ ███████╗  ███╗  ██████╗ ")
- print("\033[1;33m ████╗ ██║██╔══██╗██║     ██╔══██╗╚════██║ ████║  ╚════██╗")
- print("\033[1;32m ██╔██╗██║██║  ██║██║     ███████║    ██╔╝██╔██║    ███╔═╝")
- print("\033[1;35m ██║╚████║██║  ██║██║     ██╔══██║   ██╔╝ ╚═╝██║  ██╔══╝  ")
- print("\033[1;37m ██║ ╚███║╚█████╔╝███████╗██║  ██║  ██╔╝  ███████╗███████╗")
- print("\033[1;37m ╚═╝  ╚══╝ ╚════╝ ╚══════╝╚═╝  ╚═╝  ╚═╝   ╚══════╝╚══════╝")
- print("\033[1;37m- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
- print("\033[1;37m ~ \033[1;32mCOPYRIGHT NOLA 712")
- print("\033[1;37m ~ \033[1;32mWebsite \033[1;37msellxugiare.com")
- print("\033[1;37m ~ \033[1;32mContact Zalo Admin \033[1;33m0375556153")
- print("\033[1;37m- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
- print("\033[1;37m ~ \033[1;32mTên Người Mua :\033[1;33m "+name+"\033[1;37m |\033[1;32m Hạn Sử Dụng :\033[1;31m "+time+"")
- print("\033[1;37m- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
- print("\033[1;37m ~ \033[1;32mUseragent :\033[1;33m "+user+"")
- print("\033[1;37m- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
- enter=input("\033[1;37m ~ \033[1;31mEnter \033[1;33mĐể Tiếp Tục ")
+ print(p_key)
+ print(time)
+ print(name)
+ print("\033[1;37m ~ \033[1;32API SUCCESS !!!\n")
+ print("\033[1;37m ~ \033[1;32mName : \033[1;36m "+name+"\033[1;37m |\033[1;32m HSD : \033[1;36m "+time+"\n")
 except:
  print("\033[1;37m ~ \033[1;31mKey Sai Hoặc Hết Hạn !")
  exit()
 os.system('clear')
-print("\033[1;37m- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
 acc = int(input('\033[1;37m ~ \033[1;32mBạn Muốn Chạy Bao Nhiêu Token Facebook : \033[1;33m'))
 a = 0
 try:
   f = open('token.txt', 'w')
   for i in range(acc):
     a = a + 1
-    access_tk = input(f'\033[1;37m ~ \033[1;32mNhập Token Facebook \033[1;31m[\033[1;33m{a}\033[1;31m] : \033[1;33m')
+    access_tk = input(f'\033[1;37m ~ Nhập Token Facebook [{a}] : \033[1;33m')
     f.write(''+str(access_tk)+'\n')
 finally:
   f.close()
-print("\033[1;37m- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
-token_Tds = input('\033[1;37m ~ \033[1;32mNhập Access_token TraoDoiSub : \033[1;33m')
+token_Tds = input('\033[1;37m ~ \033[1;32mNhập Access_token TraoDoiSub : ')
 login = json.loads(requests.get('https://traodoisub.com/api/?fields=profile&access_token='+token_Tds).text)
 if "success" in login:
   print('\033[1;37m ~ \033[1;32mĐăng Nhập Thành Công !!!')
   user = login['data']['user']
 else:
   exit("\033[1;37m ~ \033[1;31mToken TraoDoiSub Không Hợp Lệ")
-chuyen = int(input('\033[1;37m ~ \033[1;32mĐổi Nick Sau Bao Nhiêu Nhiệm Vụ ? : \033[1;33m'))
+chuyen = int(input('\033[1;37m ~ \033[1;32mĐổi Nick Sau Bao Nhiêu Nhiệm Vụ ? : '))
 os.system('clear')
-print("\033[1;31m ███╗  ██╗ █████╗ ██╗      █████╗ ███████╗  ███╗  ██████╗ ")
-print("\033[1;33m ████╗ ██║██╔══██╗██║     ██╔══██╗╚════██║ ████║  ╚════██╗")
-print("\033[1;32m ██╔██╗██║██║  ██║██║     ███████║    ██╔╝██╔██║    ███╔═╝")
-print("\033[1;35m ██║╚████║██║  ██║██║     ██╔══██║   ██╔╝ ╚═╝██║  ██╔══╝  ")
-print("\033[1;37m ██║ ╚███║╚█████╔╝███████╗██║  ██║  ██╔╝  ███████╗███████╗")
-print("\033[1;37m ╚═╝  ╚══╝ ╚════╝ ╚══════╝╚═╝  ╚═╝  ╚═╝   ╚══════╝╚══════╝")
 print("\033[1;37m- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -")
 print("\033[1;37m ~ \033[1;32mTên Tài Khoản : \033[1;31m",user)
 print("\033[1;37m ~ \033[1;32mXu Hiện Tại : \033[1;33m", login['data']['xu'])
@@ -71,16 +50,14 @@ print("\033[1;37m- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 listnv = []
 nvlike = input('\033[1;37m ~ \033[1;32mNhiệm Vụ Like (y/n) : \033[1;33m')
 if nvlike == "y":
-  delaylike = int(input('\033[1;37m ~ \033[1;32mDelay Like : \033[1;33m'))
   listnv.append('like')
-nvsub = input('\033[1;37m ~ \033[1;32mNhiệm Vụ Follow (y/n) : \033[1;33m')
+nvsub = input('\033[1;37m ~ \033[1;32mNhiệm Vụ Sub (y/n) : \033[1;33m')
 if nvsub == "y":
-  delayfl = int(input('\033[1;37m ~ \033[1;32mDelay Follow : \033[1;33m'))
   listnv.append('sub')
 nvcmt = input('\033[1;37m ~ \033[1;32mNhiệm Vụ Comment (y/n) : \033[1;33m')
 if nvcmt == "y":
-  delaycmt = int(input('\033[1;37m ~ \033[1;32mDelay Comment : \033[1;33m'))
   listnv.append('cmt')
+time = input("Nhập Delay: ")
 #nvshare = input('\033[1;32mNhiệm Vụ Share (y/n) : \033[1;35m')
 #if nvshare == "y":
 #  timeshare = int(input('\033[1;32mDelay Share : \033[1;35m'))
@@ -100,9 +77,9 @@ while(True):
         namefb = check_token['name']
         run = json.loads(requests.get('https://traodoisub.com/api/?fields=run&id='+str(idfb)+'&access_token='+token_Tds).text)
         if "success" in run:
-          print('\033[1;32m Đang Cấu Hình ID : \033[1;31m'+str(idfb)+' \033[1;37m| \033[1;32mFacebook \033[1;33m'+str(namefb)+'')
+          print('\033[1;32m Đang Cấu Hình : ID: '+str(idfb)+' | Facebook '+str(namefb)+'')
         else:
-          print('\033[1;37m ~ \033[1;31mCấu Hình Thất Bại, Vui Lòng Thêm Id : \033[1;32m'+str(idfb)+' \033[1;37m| \033[1;32m'+str(namefb)+' \033[1;31mVào Cấu Hình TraoDoiSub')
+          print('\033[1;37m ~ \033[1;31mCấu Hình Thất Bại, Vui Lòng Thêm Id : '+str(idfb)+' | '+str(namefb)+' Vào Cấu Hình TraoDoiSub')
           continue
       else:
         print('\033[1;37m ~ \033[1;31mToken Die !!!')
@@ -126,12 +103,12 @@ while(True):
               chuyển = chuyển +1
               đếm = đếm + 1
               mau = random.choice(màu)
-              print('  \033[93m[\033[92mNOLA712\033[93m] \033[1;31m[\033[1;33m' + str(đếm) + '\033[1;31m] \033[31m[\033[1;36m' +str(t)+'\033[31m]\033[1;31m  \033[31m[\033[1;32mCMT\033[31m]  \033[31m[\033[1;32m' + str(id)+ '\033[31m]\033[1;31m \033[1;31m[\033[32m+600\033[31m] \033[31m[\033[1;33m'+str(nhantien['data']['xu'])+'\033[31m]')
-              for demtg in range(int(delaycmt), -1, -1):
-                print('\033[1;34m Vui Lòng Chờ Trong'+str(demtg)+' \033[1;32mGiây ',end='\r')
+              print('\033[93m[\033[92mNOLA712\033[93m]\033[1;31m ● \033[1;33m[' + str(đếm) + ']\033[1;31m ● \033[93m[\033[1;36m' +str(t)+'\033[33m]\033[1;31m ●\033[33m [\033[1;32mCMT\033[33m]\033[1;31m ● \033[33m[\033[1;37m' + str(id)+ '\033[33m]\033[1;31m ● \033[1;33m[\033[33m+600\033[33m]\033[1;31m ● \033[33m[\033[1;37m'+str(nhantien['data']['xu'])+'\033[33m]')
+              for demtg in range(int(time), -1, -1):
+                print('\033[1;34m Đang Delay '+str(demtg)+'   ',end='\r')
                 sleep(1)
               else:
-                print("\033[1;31mThất Bại : "+str(id)+"", end="\r")
+                print("\033[1;37m ~ \033[1;31mThất Bại: "+str(id)+"", end="\r")
               if chuyển == chuyen:
                 break
         if chuyển == chuyen:
@@ -152,12 +129,12 @@ while(True):
               chuyển = chuyển +1
               đếm = đếm + 1
               mau = random.choice(màu)
-              print('  \033[93m[\033[92mNOLA712\033[93m] \033[1;31m[\033[1;33m' + str(đếm) + '\033[1;31m] \033[31m[\033[1;36m' +str(t)+'\033[31m]\033[1;31m  \033[31m[\033[1;32mLIKE\033[31m]  \033[31m[\033[1;32m' + str(id)+ '\033[31m]\033[1;31m \033[1;31m[\033[32m+300\033[31m] \033[31m[\033[1;33m'+str(nhantien['data']['xu'])+'\033[31m]')
-              for demtg in range(int(delaylike), -1, -1):
-               print('\033[1;34m Vui Lòng Chờ Trong'+str(demtg)+' \033[1;32mGiây ',end='\r')
+              print('\033[93m[\033[92mNOLA712\033[93m]\033[1;31m ● \033[1;33m[' + str(đếm) + ']\033[1;31m ● \033[93m[\033[1;36m' +str(t)+'\033[33m]\033[1;31m ●\033[33m [\033[1;32mLIKE\033[33m]\033[1;31m ● \033[33m[\033[1;37m' + str(id)+ '\033[33m]\033[1;31m ● \033[1;33m[\033[33m+300\033[33m]\033[1;31m ● \033[33m[\033[1;37m'+str(nhantien['data']['xu'])+'\033[33m]')
+              for demtg in range(int(time), -1, -1):
+               print('\033[1;34m Đang Delay '+str(demtg)+'   ',end='\r')
                sleep(1)
             else:
-              print("\033[1;31mThất Bại : "+str(id)+"", end="\r")
+              print("\033[1;37m ~ \033[1;31mThất Bại: "+str(id)+"", end="\r")
             if chuyển == chuyen:
               break
         if chuyển == chuyen:
@@ -178,12 +155,12 @@ while(True):
               chuyển = chuyển +1
               đếm = đếm + 1
               mau = random.choice(màu)
-              print('  \033[93m[\033[92mNOLA712\033[93m] \033[1;31m[\033[1;33m' + str(đếm) + '\033[1;31m] \033[31m[\033[1;36m' +str(t)+'\033[31m]\033[1;31m  \033[31m[\033[1;32mFOLLOW\033[31m]  \033[31m[\033[1;32m' + str(id)+ '\033[31m]\033[1;31m \033[1;31m[\033[32m+600\033[31m] \033[31m[\033[1;33m'+str(nhantien['data']['xu'])+'\033[31m]')
-              for demtg in range(int(delayfl), -1, -1):
-               print('\033[1;34m Vui Lòng Chờ Trong'+str(demtg)+' \033[1;32mGiây ',end='\r')
+              print('\033[93m[\033[92mNOLA712\033[93m]\033[1;31m ● \033[1;33m[' + str(đếm) + ']\033[1;31m ● \033[93m[\033[1;36m' +str(t)+'\033[33m]\033[1;31m ●\033[33m [\033[1;32mFOLLOW\033[33m]\033[1;31m ● \033[33m[\033[1;37m' + str(id)+ '\033[33m]\033[1;31m ● \033[1;33m[\033[33m+600\033[33m]\033[1;31m ● \033[33m[\033[1;37m'+str(nhantien['data']['xu'])+'\033[33m]')
+              for demtg in range(int(time), -1, -1):
+               print('\033[1;34m Đang Delay '+str(demtg)+'   ',end='\r')
                sleep(1)
             else:
-              print("\033[1;31mThất Bại : "+str(id)+"", end="\r")
+              print("\033[1;37m ~ \033[1;31mThất Bại: "+str(id)+"", end="\r")
             if chuyển == chuyen:
               break
         if chuyển == chuyen:
